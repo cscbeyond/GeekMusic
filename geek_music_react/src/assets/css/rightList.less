@@ -1,0 +1,121 @@
+// allList 部分 （右侧列表）
+.right-list {
+    width: 20%;
+    height: 50%;
+    flex-grow: 1;
+    height: calc(100vh - 60px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background-image: url(../imgs/bg1.jpg);
+
+    .right-top.collection {
+        overflow: auto;
+        height: 30%;
+
+        .collect-title {
+            margin: 5px 0;
+            text-align: center;
+            font-size: 16px;
+        }
+
+        .collection-list-container {
+            height: calc(100% - 40px);
+            overflow: auto;
+
+            .collection-list {
+                .empty-collect {
+                    color: #c9584d;
+                    font-size: 20px;
+                    text-align: center;
+                    margin-top: 30px;
+                }
+
+                li {
+                    padding-left: 10px;
+                    cursor: pointer;
+                    height: 30px;
+                    line-height: 30px;
+                    border-bottom: 1px solid #fff;
+                    text-overflow: ellipsis;
+                    overflow: hidden;
+                    white-space: nowrap;
+
+                    &.active {
+                        color: #fff;
+                        background-color: #86cdf5;
+                    }
+
+                    .collect-album-name {
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+
+    .right-middle {
+        height: 5px;
+        background-color: #ccc;
+        cursor: row-resize;
+    }
+
+    //全部歌曲
+    .right-bottom {
+        overflow: auto;
+        height: 70%;
+
+        .all-list-title {
+            text-align: center;
+            font-size: 16px;
+            height: 40px;
+            line-height: 40px;
+        }
+
+        .all-list-container {
+            height: calc(100% - 40px);
+            overflow: auto;
+
+            .ant-collapse {
+                border: none;
+            }
+
+            .ant-collapse-item {
+                border: none;
+            }
+
+            .collapse {
+                background-color: transparent;
+                border: 1px solid #fff;
+                border-bottom: none;
+                border-radius: 0;
+
+                &:last-child {
+                    border-bottom: 1px solid #fff;
+                }
+
+                .ant-collapse-content {
+                    background-color: transparent;
+
+                    .songName {
+                        padding-left: 5px;
+                        cursor: pointer;
+                        height: 30px;
+                        line-height: 30px;
+                        border-bottom: 1px solid #fff;
+                        white-space: nowrap;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+
+                        &.active {
+                            color: #fff;
+                            border-bottom: none;
+                            background-color: #86cdf5;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

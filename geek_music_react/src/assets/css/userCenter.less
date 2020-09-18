@@ -1,0 +1,100 @@
+.user-center {
+	float: right;
+	height: 100%;
+
+	.go-to-login {
+		height: 60px;
+		line-height: 60px;
+		color: #fff;
+		cursor: pointer;
+		margin-right: 30px;
+		font-size: 18px;
+
+		&:hover {
+			color: blue;
+		}
+	}
+
+	.hide {
+		display: none;
+	}
+
+	.info-container {
+		position: relative;
+		height: 100%;
+		display: flex;
+		align-items: center;
+
+		.nick-name {
+			margin-right: 10px;
+		}
+
+		.avatar {
+			width: 40px;
+			height: 40px;
+			margin-right: 20px;
+		}
+
+		&:hover {
+			.user-info-options {
+				background-image: url("../imgs/header-bg.jpg");
+				display: block;
+			}
+		}
+
+		.user-info-options {
+			position: absolute;
+			top: 60px;
+			right: 0;
+			z-index: 1;
+			word-break: keep-all;
+			width: 130px;
+			display: none;
+			box-shadow: 0px 2px 2px 1px rgba(0, 0, 0, 0.1);
+			background-image: url("../imgs/header-bg.jpg");
+
+			&:hover {
+				display: block;
+			}
+
+			ul {
+				.line-box {
+					padding: 8px 0;
+					border-bottom: 1px solid #ccc;
+				}
+
+				li {
+					height: 20px;
+					line-height: 20px;
+					cursor: pointer;
+					height: 35px;
+					line-height: 35px;
+					padding: 0 8px;
+					display: flex;
+					align-items: center;
+
+					a {
+						color: rgba(0, 0, 0, 0.65);
+						text-decoration: none;
+					}
+
+					&:hover {
+						color: #fff;
+						background-color: #65a1e2;
+					}
+
+					&:hover a {
+						color: #fff;
+						background-color: #65a1e2;
+					}
+
+					i {
+						margin-right: 5px;
+					}
+				}
+
+			}
+
+		}
+	}
+}

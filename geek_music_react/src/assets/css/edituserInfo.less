@@ -1,0 +1,139 @@
+.user-info {
+	.hide {
+		display: none;
+	}
+
+	.content {
+		text-align: center;
+		height: calc(100vh - 60px);
+		// background-color: pink;
+		// background-image: linear-gradient(to bottom right, #ACCAF8, #cddee6);
+		background-image: url('../imgs/bg1.jpg');
+		margin: auto;
+		padding: 20px 40px;
+
+		.title {
+			margin-top: 30px;
+			padding-bottom: 30px;
+			font-size: 20px;
+			text-align: left;
+			border-bottom: 1px solid #ccc;
+
+		}
+
+		.items {
+			display: flex;
+			flex-direction: column;
+
+			.item {
+				display: flex;
+				border-bottom: 1px solid #c1bcbc;
+				padding: 30px 0;
+
+				.label {
+					font-size: 18px;
+					width: 150px;
+				}
+
+				img {
+					width: 80px;
+					height: 80px;
+				}
+
+				// 头像的操作
+				.opt {
+					display: flex;
+					flex-direction: column;
+					justify-content: space-around;
+					padding-left: 20px;
+
+					.des {
+						font-size: 12px;
+						color: rgba(0, 0, 0, 0.6);
+					}
+
+					// 上传新头像点击的按钮
+					.new-avatar-label {
+						border-radius: 3px;
+						color: #fff;
+						background: #1890ff;
+						height: 30px;
+						line-height: 30px;
+						width: 90px;
+						text-align: center;
+						transition: 0.3s all;
+
+						&:hover {
+							background-color: #40a9ff;
+						}
+					}
+				}
+
+				//修改昵称部分
+				.detail {
+					width: 200px;
+					text-align: left;
+					color: rgba(0, 0, 0, 0.5);
+					font-size: 16px;
+
+					input {
+						border-radius: 8px;
+						outline: none;
+						border: none;
+						text-indent: 1em;
+						height: 30px;
+						line-height: 30px;
+					}
+				}
+
+				.btns-container {
+					display: flex;
+					flex-direction: row;
+					justify-content: space-evenly;
+					width: 300px;
+					float: right;
+
+					.edit-btn,
+					.cancel {
+						user-select: none;
+						cursor: pointer;
+
+						&:hover {
+							color: rgba(0, 0, 0, 0.5);
+						}
+					}
+				}
+			}
+		}
+
+		#new-avatar {
+			display: none;
+		}
+
+		.space {
+			margin: 20px auto;
+			display: flex;
+			width: 300px;
+
+			label {
+				font-size: 18px;
+				display: inline-block;
+				margin-bottom: 10px;
+			}
+
+			.ipt {
+				height: 40px;
+				line-height: 40px;
+				padding-left: 15px;
+				margin-bottom: 30px;
+
+			}
+
+		}
+
+		.confirm {
+			// width: 100px;
+			margin-left: 100px;
+		}
+	}
+}
