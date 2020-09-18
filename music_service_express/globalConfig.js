@@ -1,11 +1,9 @@
-const cosSecretId = 'AKIDoQlqeKvGsCF2XmjH7gxxQfaEbiY5p8F9';
-const cosSecretKey = 'kD0bu3uWrvjhOwCBE0XtxlIZ5OQFn4Zn';
 const mysql = require('mysql');
 let db = mysql.createPool({
 	user: 'root',
 	host: 'localhost',
-	password: 'Chen7349058.',
-	port: '3306',
+	password: 'Your Password',
+	port: 'Your port',
 	database: 'geek_music'
 });
 const absPath = '/Users/geekchen/Desktop/musicResource';  //开发
@@ -24,8 +22,6 @@ let cscQuery = function (sql) {
 }
 
 module.exports = {
-	cosSecretId,
-	cosSecretKey,
 	db,
 	cscQuery,
 	absPath
