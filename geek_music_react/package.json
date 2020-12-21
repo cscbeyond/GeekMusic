@@ -158,6 +158,6 @@
       "react-app"
     ]
   },
-  "proxy": "http://localhost:3001",
+  "proxy": "https://www.rocker.pub",
   "homepage": "https://www.rocker.pub/player"
 }
