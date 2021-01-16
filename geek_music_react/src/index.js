@@ -11,7 +11,7 @@ import { Route } from "react-router-dom";
 // import createHistory from "history/createHashHistory";
 // const history = createHistory();
 window.httpRequest = httpRequest;
-
+// 1
 ReactDOM.render(
   <BrowserRouter>
     <Provider store={store}>
