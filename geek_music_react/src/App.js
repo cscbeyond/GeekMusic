@@ -6,14 +6,14 @@ import routers from "@/routers/index.js";
 import renderRoutes from "@/utils/renderRoutes";
 
 const authPath = "/login"; // 默认未登录的时候返回的页面，可以自行设置
-
+// 
 class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
       authed: false,
     };
-  }
+  } 
   render() {
     return (
       <div className="App">
