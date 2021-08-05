@@ -363,7 +363,7 @@ class Player extends Component {
 
     //part5: 动态监听
     function renderFrame() {
-      console.log("renderFrame");
+      // console.log("renderFrame");
       requestAnimationFrame(renderFrame);
       // console.log(animationId);
       //方法renderFrame托管到定时器，无限循环调度，频率<16.6ms/次
@@ -507,9 +507,15 @@ class Player extends Component {
 
   // 播放当前列表的下一首
   playNextSong() {
+
     let curList = this.state.curList;
     let curSongId = this.props.curSongInfo.id;
-    console.log("curSongId:-----", curSongId);
+    var state = { //这里可以是你想给浏览器的一个State对象，为后面的StateEvent做准备。
+      title: "rocker.pub",
+      url: '/player/index?songId=' + curSongId
+    };
+    window.history.pushState(state, "", state.url);
+    // console.log("curSongId:-----", curSongId);
     if (curList === "allList") {
       let allList = this.props.allList;
       allList.forEach((item, albumIdx) => {
@@ -680,7 +686,7 @@ class Player extends Component {
       });
   }
   // 播放时 更新进度条
-  durationChangeHandler() {}
+  durationChangeHandler() { }
 
   loadMetaData() {
     // let dur = this.refs.audio.duration;
