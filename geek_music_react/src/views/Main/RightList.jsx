@@ -97,7 +97,19 @@ class RightList extends Component {
       this.getRightAllList();
     }
   }
-
+  getQueryString(name, url) {
+    var href = url || window.location.href;
+    var theRequest = {};
+    if (href.indexOf("?") !== -1) {
+      var hrefArr = href.split('?');
+      var str = hrefArr[1];
+      let strs = str.split("&");
+      for (var i = 0; i < strs.length; i++) {
+        theRequest[strs[i].split("=")[0]] = unescape(strs[i].split("=")[1]);
+      }
+    }
+    return theRequest[name];
+  }
   genHasNoCollect() {
     if (this.props.state.collectList.length === 0) {
       if (this.props.state.userInfo.id) {
@@ -109,6 +121,12 @@ class RightList extends Component {
   }
 
   playByName(item, type) {
+    // console.log(item, type);
+    var state = { //这里可以是你想给浏览器的一个State对象，为后面的StateEvent做准备。
+      title: "rocker.pub",
+      url: '/player/index?songId=' + item.id
+    };
+    window.history.pushState(state, "", state.url);
     let curSongId = this.props.state.curSongInfo.id;
     if (item.id === curSongId) {
       if (this.props.state.isPlaying === 1) {
@@ -146,6 +164,17 @@ class RightList extends Component {
           "/src/getSongStream.music?url=" + songUrl;
         let collectListRes = res[1].data.songsList;
         this.computeCollectList(songListRes, collectListRes);
+        if (this.getQueryString('songId')) {
+          console.log(this.getQueryString('songId'));
+          songListRes.forEach(albumItem => {
+            albumItem.children.forEach(songItem => {
+              console.log(songItem.id == this.getQueryString('songId'));
+              if (songItem.id == this.getQueryString('songId')) {
+                this.playByName(songItem, 'allList')
+              }
+            })
+          })
+        }
       })
       .catch((err) => {
         console.log(err);
